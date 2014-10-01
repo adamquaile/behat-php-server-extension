@@ -6,7 +6,7 @@ Extension to run PHP's built-in web server during tests
 
 Require package `adamquaile/behat-php-server-extension` via composer:
 
-    composer require --dev "adamquaile/behat-php-server-extension"
+    composer require --dev "adamquaile/behat-php-server-extension *@dev"
 
 Add configuration to your `behat.yml` (the `host` and `router` keys are optional; the default host will be `localhost:8000`):
 
