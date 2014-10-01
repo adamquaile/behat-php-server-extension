@@ -1,10 +1,23 @@
 {
+    "name": "adamquaile/behat-php-server-extension",
+    "description": "Extension to run PHP's built-in web server during tests",
+    "type": "library",
     "autoload": {
         "psr-0": {
-            "": "src/"
+            "AdamQuaile\\Behat\\PhpServerExtension": "src/"
         }
     },
     "require": {
-        "behat/behat": "~3.0@dev"
+        "behat/behat": "~3.0",
+        "symfony/process": "*"
+    },
+    "authors": [
+        {
+            "name": "Adam Quaile",
+            "email": "adamquaile@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/adamquaile/behat-php-server-extension/issues"
     }
 }
