@@ -73,6 +73,8 @@ class RunPhpServerListener implements EventSubscriberInterface
         );
         $this->process->start();
 
+        sleep(1);
+
         if (!$this->process->isRunning()) {
             throw new \RuntimeException('PHP built-in server process terminated immediately');
         }
