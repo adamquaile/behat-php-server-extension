@@ -78,6 +78,9 @@ class RunPhpServerListener implements EventSubscriberInterface
         if (!$this->process->isRunning()) {
             throw new \RuntimeException('PHP built-in server process terminated immediately');
         }
+
+        // Also trap fatal errors to make sure running processes are terminated
+        register_shutdown_function([$this, 'afterSuite']);
     }
 
     public function afterSuite()
