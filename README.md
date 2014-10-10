@@ -1,5 +1,7 @@
 # PHP Server Behat Extension
 
+*This is a proof-of-concept - use with caution!*
+
 Extension to run PHP's built-in web server during tests
 
 ## Installation
