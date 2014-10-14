@@ -65,10 +65,17 @@ class RunPhpServerListener implements EventSubscriberInterface
 
     public function beforeSuite()
     {
+        $router = ('' != $this->router)
+            ? escapeshellarg($this->router)
+            : ''
+        ;
+
         $this->process = new Process(
             sprintf(
                 'php -S %s -t %s %s',
-                escapeshellarg($this->host), escapeshellarg($this->docroot), escapeshellarg($this->router)
+                escapeshellarg($this->host),
+                escapeshellarg($this->docroot),
+                $router
             )
         );
         $this->process->start();
