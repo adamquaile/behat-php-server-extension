@@ -1,0 +1,9 @@
+default:
+    suites:
+        default:
+            contexts:
+                - FeatureContext: [{base_url: "http://localhost:8765/"}]
+    extensions:
+        AdamQuaile\Behat\PhpServerExtension:
+            host: 0.0.0.0:8765
+            docroot: ./docroot

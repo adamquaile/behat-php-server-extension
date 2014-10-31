@@ -70,9 +70,12 @@ class RunPhpServerListener implements EventSubscriberInterface
             : ''
         ;
 
+        // See https://github.com/symfony/symfony/issues/5030 for why exec
+        // is used here
+
         $this->process = new Process(
             sprintf(
-                'php -S %s -t %s %s',
+                'exec php -S %s -t %s %s',
                 escapeshellarg($this->host),
                 escapeshellarg($this->docroot),
                 $router
